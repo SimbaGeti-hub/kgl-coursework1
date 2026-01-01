@@ -1,9 +1,9 @@
 
 // COURSEWORK 3: KGL Analytics and Reporting System
 
-// Part A: Higher Order Functions - Data Transformation (40 marks)
+// Part A: Higher Order Functions - Data Transformation
 
-// 1. Create array of procurement records (10 marks)
+// 1. Create array of procurement records 
 let procurementRecords = [
     {
         id: 1001,
@@ -55,7 +55,7 @@ let procurementRecords = [
     }
 ];
 
-// 2. Use map() to add costPerKg property (10 marks)
+// 2. Use map() to add costPerKg property 
 let recordsWithCostPerKg = procurementRecords.map(record => {
     return {
         ...record,
@@ -65,7 +65,7 @@ let recordsWithCostPerKg = procurementRecords.map(record => {
 
 console.log(recordsWithCostPerKg);
 
-// 3. Use filter() to get records with tonnage >= 1800 (10 marks)
+// 3. Use filter() to get records with tonnage >= 1800 
 let filteredRecords = recordsWithCostPerKg.filter(record => {
     return record.tonnageInKgs >= 1800;
 });
@@ -73,7 +73,7 @@ let filteredRecords = recordsWithCostPerKg.filter(record => {
 console.log(filteredRecords);
 console.log(`Filtered records count: ${filteredRecords.length}`);
 
-// 4. Use reduce() to calculate totals (10 marks)
+// 4. Use reduce() to calculate totals
 let totals = procurementRecords.reduce((accumulator, record) => {
     return {
         totalTonnage: accumulator.totalTonnage + record.tonnageInKgs,
@@ -84,9 +84,9 @@ let totals = procurementRecords.reduce((accumulator, record) => {
 console.log(`Total tonnage: ${totals.totalTonnage}`);
 console.log(`Total cost: ${totals.totalCost}`);
 
-// Part B: Sets for Unique Data Management (30 marks)
+// Part B: Sets for Unique Data Management 
 
-// 5. Function to get unique dealers (15 marks)
+// 5. Function to get unique dealers 
 function getUniqueDealers(records) {
     let dealerSet = new Set();
     
@@ -102,7 +102,7 @@ function getUniqueDealers(records) {
 
 getUniqueDealers(procurementRecords);
 
-// 6. Create Set and authorization function (15 marks)
+// 6. Create Set and authorization function
 let authorizedRoles = new Set(['Manager', 'Director']);
 
 function isAuthorizedForProcurement(userRole) {
@@ -112,9 +112,9 @@ function isAuthorizedForProcurement(userRole) {
 console.log(isAuthorizedForProcurement('Manager'));
 console.log(isAuthorizedForProcurement('Sales Agent'));
 
-// Part C: Maps for Price Management (30 marks)
+// Part C: Maps for Price Management 
 
-// 7. Create Map with price list (10 marks)
+// 7. Create Map with price list
 let kglPriceList = new Map();
 kglPriceList.set('Beans', 5500);
 kglPriceList.set('Grain Maize', 4800);
@@ -122,7 +122,7 @@ kglPriceList.set('Cow peas', 6000);
 kglPriceList.set('G-nuts', 7200);
 kglPriceList.set('Soybeans', 5800);
 
-// 8. Function to calculate sale total (15 marks)
+// 8. Function to calculate sale total
 function calculateSaleTotal(produceName, tonnageInKgs) {
     let pricePerKg = kglPriceList.get(produceName);
     
@@ -137,7 +137,7 @@ console.log(calculateSaleTotal('Beans', 1500));
 console.log(calculateSaleTotal('G-nuts', 2000));
 console.log(calculateSaleTotal('Maize', 1000));
 
-// 9. Loop through Map and find highest price (5 marks)
+// 9. Loop through Map and find highest price 
 for (let [name, price] of kglPriceList) {
     console.log(`Produce: [${name}], Price per Kg: [${price}] UGX`);
 }

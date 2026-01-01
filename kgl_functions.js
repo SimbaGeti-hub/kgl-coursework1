@@ -1,9 +1,9 @@
 
 // COURSEWORK 2: KGL Inventory Processing System
 
-// Part A: Function Implementation (30 marks)
+// Part A: Function Implementation
 
-// 1. Function to calculate procurement cost (10 marks)
+// 1. Function to calculate procurement cost 
 function calculateProcurementCost(tonnageInKg, pricePerKg) {
     if (typeof tonnageInKg !== 'number' || typeof pricePerKg !== 'number') {
         return "Invalid input";
@@ -17,7 +17,7 @@ function calculateProcurementCost(tonnageInKg, pricePerKg) {
 console.log(calculateProcurementCost(1500, 50));
 console.log(calculateProcurementCost(-100, 50));
 
-// 2. Arrow function to validate buyer name (10 marks)
+// 2. Arrow function to validate buyer name 
 const validateBuyerName = (buyerName) => {
     if (typeof buyerName === 'string' && buyerName.length >= 2 && buyerName.trim() !== "") {
         return true;
@@ -28,7 +28,7 @@ const validateBuyerName = (buyerName) => {
 console.log(validateBuyerName('John Doe'));
 console.log(validateBuyerName('A'));
 
-// 3. Function with switch statement (10 marks)
+// 3. Function with switch statement 
 function checkUserAuthorization(role) {
     switch(role) {
         case 'Manager':
@@ -45,9 +45,9 @@ function checkUserAuthorization(role) {
 console.log(checkUserAuthorization('Manager'));
 console.log(checkUserAuthorization('Sales Agent'));
 
-// Part B: Object Creation and Manipulation (35 marks)
+// Part B: Object Creation and Manipulation 
 
-// 4. Function to create sales record (15 marks)
+// 4. Function to create sales record 
 function createSalesRecord(produceName, tonnage, buyerName, amountPaid) {
     return {
         id: Math.floor(Math.random() * 9000) + 1000,
@@ -60,7 +60,7 @@ function createSalesRecord(produceName, tonnage, buyerName, amountPaid) {
     };
 }
 
-// 5. Create and manipulate sales record (10 marks)
+// 5. Create and manipulate sales record 
 let salesRecord = createSalesRecord('Beans', 2000, 'Maganjo', 100000);
 console.log(salesRecord);
 
@@ -71,14 +71,14 @@ salesRecord['dueDate'] = new Date('2025-01-15');
 let propertyNames = Object.keys(salesRecord);
 console.log(propertyNames);
 
-// 6. Loop through object (10 marks)
+// 6. Loop through object 
 for (let property in salesRecord) {
     console.log(`Property: [${property}], Value: [${salesRecord[property]}]`);
 }
 
-// Part C: Loop Implementation and Data Processing (35 marks)
+// Part C: Loop Implementation and Data Processing 
 
-// 7. Traditional for loop (15 marks)
+// 7. Traditional for loop 
 let weeklyTonnage = [1200, 1500, 980, 2000, 1100, 1800, 1300];
 
 let totalTonnage = 0;
@@ -91,7 +91,7 @@ let averageDailyTonnage = totalTonnage / weeklyTonnage.length;
 console.log(`Total tonnage: ${totalTonnage}kg`);
 console.log(`Average daily tonnage: ${averageDailyTonnage}kg`);
 
-// 8. For...of loop with continue (15 marks)
+// 8. For...of loop with continue 
 let salesRecords = [
     createSalesRecord('Beans', 1500, 'Buyer1', 75000),
     createSalesRecord('Maize', 2000, 'Buyer2', 100000),
@@ -113,7 +113,7 @@ for (let record of salesRecords) {
 
 console.log(`Total credit sales: [${creditSalesCount}]`);
 
-// 9. For loop with break (5 marks)
+// 9. For loop with break 
 let inventory = [
     {name: 'Beans', tonnage: 500},
     {name: 'Maize', tonnage: 0},
